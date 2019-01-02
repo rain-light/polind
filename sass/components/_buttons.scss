@@ -1,0 +1,25 @@
+.btn,
+.btn:link,
+.btn:visited {
+    text-decoration: none;
+    display: inline-block;
+
+    transition: transform .3s, color .3s;
+}
+
+.btn--yellow {
+    background-color: $color-yellow;
+    color: $color-gold;
+}
+
+.btn--normal {
+    text-transform: uppercase;
+    font-size: 1.4em;
+    letter-spacing: .1em;
+    padding: 1em 3em;
+    border-radius: 3em;
+
+    &:hover {
+        transform: scale(1.05) translateY(-.3em);
+    }
+}

@@ -1,0 +1,318 @@
+/* Original design found here - https://symu.co/freebies/templates-4/polind-psd-template/
+Everything of the implementation (exception made for the external libraries such as
+normalize.css or the poly fluid sizing) is by me, Riccardo Battiato
+Check me out at https://riccardo.cc
+Check my GitHub - https://github.com/rain-light
+This project page - https://github.com/rain-light/polind */
+/* MAIN COLORS */
+/*
+  0 - 600px:      Phone
+  600 - 900px:    Tablet portrait
+  900 - 1200px:   Tablet landscape
+  [1200 - 1800] is where our normal styles apply
+  1800px + :      Big desktop
+  
+  $breakpoint arguement choices:
+  - phone
+  - tab-port
+  - tab-land
+  - big-desktop
+  
+  ORDER: Base + typography > general layout + grid > page layout > components
+  
+  1em = 16px
+  */
+/* Resets and stuff handled by normalize.css */
+html {
+  font-size: 62.5%;
+}
+
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.7;
+}
+
+/* TEXT UTILITIES */
+.u-text-accent {
+  color: #ED6950 !important;
+}
+
+[class^="heading"] {
+  margin: 0;
+}
+
+.heading-1 {
+  font-size: 9.2em;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+.heading-6 {
+  font-size: 1.8em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* LOGO */
+.logo {
+  width: 15rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+.logo__image {
+  width: 4rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.logo__text {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+/* SEARCH ICON */
+.icon-search {
+  display: block;
+  width: 1.8rem;
+  height: 1.8rem;
+  fill: #FFC74A;
+  cursor: pointer;
+  -webkit-transition: fill .3s;
+  transition: fill .3s;
+}
+
+.icon-search:hover {
+  fill: #ED6950;
+}
+
+/* HAMBURGER MENU ICON */
+.hamburger-menu {
+  width: 3rem;
+  height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.hamburger-menu__line {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  border-radius: 10px;
+  background-color: currentColor;
+}
+
+.hamburger-menu__line::before, .hamburger-menu__line::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: currentColor;
+}
+
+.hamburger-menu__line::before {
+  bottom: .7rem;
+}
+
+.hamburger-menu__line::after {
+  top: .7rem;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  display: inline-block;
+  -webkit-transition: color .3s, -webkit-transform .3s;
+  transition: color .3s, -webkit-transform .3s;
+  transition: transform .3s, color .3s;
+  transition: transform .3s, color .3s, -webkit-transform .3s;
+}
+
+.btn--yellow {
+  background-color: #FFC74A;
+  color: #B98000;
+}
+
+.btn--normal {
+  text-transform: uppercase;
+  font-size: 1.4em;
+  letter-spacing: .1em;
+  padding: 1em 3em;
+  border-radius: 3em;
+}
+
+.btn--normal:hover {
+  -webkit-transform: scale(1.05) translateY(-0.3em);
+          transform: scale(1.05) translateY(-0.3em);
+}
+
+.header {
+  position: relative;
+  height: 120vh;
+  min-height: calc(70rem + 20vh);
+  background-image: url(/img/header.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.header::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.header__content {
+  position: relative;
+  height: 100vh;
+  min-height: 70rem;
+  z-index: 1;
+  color: #fff;
+  /* RESPONSIVENESS SETTINGS */
+  font-size: 6px;
+}
+
+@media only screen and (min-width: 280px) {
+  .header__content {
+    font-size: calc(0.39474vw + 4.89474px);
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .header__content {
+    font-size: 12px;
+  }
+}
+
+.header__center {
+  position: absolute;
+  width: 100%;
+  max-width: 80vw;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.header__subheading {
+  margin-top: 1em;
+}
+
+.header__button {
+  margin-top: 4.5em;
+}
+
+.header__bottom {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 1.8em;
+}
+
+.navbar {
+  width: 95%;
+  margin: 0 auto;
+  padding-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .navbar {
+    width: 90%;
+  }
+}
+
+.navbar__list {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .navbar__list {
+    display: none;
+  }
+}
+
+.navbar__element:not(:first-child) {
+  margin-left: 5rem;
+}
+
+.navbar__link, .navbar__link:link, .navbar__link:visited {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.8rem;
+  -webkit-transition: color .3s;
+  transition: color .3s;
+}
+
+.navbar__link:hover, .navbar__link:link:hover, .navbar__link:visited:hover {
+  color: #FFC74A;
+}
+
+@media only screen and (min-width: 37.5em) {
+  .navbar__hamburger {
+    display: none;
+  }
+}
+/*# sourceMappingURL=style.css.map */

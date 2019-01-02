@@ -1,0 +1,23 @@
+/* Original design found here - https://symu.co/freebies/templates-4/polind-psd-template/
+Everything of the implementation (exception made for the external libraries such as
+normalize.css or the poly fluid sizing) is by me, Riccardo Battiato
+Check me out at https://riccardo.cc
+Check my GitHub - https://github.com/rain-light
+This project page - https://github.com/rain-light/polind */
+
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+
+@import "base/base";
+@import "base/utilities";
+@import "base/typography";
+@import "base/animations";
+
+@import "components/misc";
+
+@import "layout/header";
+@import "layout/navigation";
+@import "layout/footer";
+
+@import "pages/home";

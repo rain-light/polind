@@ -1,0 +1,36 @@
+.find {
+
+    &__heading {
+        text-align: center;
+    }
+
+    &__search {
+        margin: 4rem auto 0 auto;
+        @include poly-fluid-sizing("width", (280px: 250px, 600px: 500px, 1800px: 1000px));
+    }
+
+    &__categories {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__grid {
+        max-width: 120rem;
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 37.1rem);
+        justify-content: center;
+        grid-gap: 3rem;
+    }
+
+    &__location {
+        background-color: rgba(deepskyblue, .5);
+        width: 100%; //TEST
+        height: 35rem; //TEST
+    }
+}

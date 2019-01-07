@@ -1,0 +1,13 @@
+.explore {
+    max-width: 120rem;
+    width: 100%;
+    margin: 0 auto;
+
+    @include respond(tab-land) {
+        padding: 0 2rem;
+    }
+
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+}

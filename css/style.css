@@ -238,6 +238,12 @@ body {
   border: 1px solid #BDC8D9;
 }
 
+/* HEADING COMPONENT */
+.heading {
+  text-align: center;
+  padding: 4rem 0;
+}
+
 .btn,
 .btn:link,
 .btn:visited {
@@ -656,11 +662,34 @@ body {
   margin-bottom: 2rem;
 }
 
+.explore {
+  max-width: 120rem;
+  width: 100%;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-grid-columns: (minmax(40rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+}
+
+@media only screen and (max-width: 75em) {
+  .explore {
+    padding: 0 2rem;
+  }
+}
+
 .section-places {
   margin-bottom: -12rem;
 }
 
 .section-find {
-  padding-bottom: 4rem;
+  padding-bottom: 5rem;
+}
+
+.section-explore {
+  background-color: rgba(189, 199, 217, 0.1);
 }
 /*# sourceMappingURL=style.css.map */

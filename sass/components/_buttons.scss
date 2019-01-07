@@ -2,6 +2,8 @@
 .btn:link,
 .btn:visited {
     text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
     display: inline-block;
 
     transition: transform .3s, color .3s;
@@ -12,8 +14,14 @@
     color: $color-gold;
 }
 
+.btn--white {
+    background-color: #fff;
+    color: $color-gray-light;
+    box-shadow: 0 0 10rem rgba(0, 0, 0, .1);
+}
+
+
 .btn--normal {
-    text-transform: uppercase;
     font-size: 1.4em;
     letter-spacing: .1em;
     padding: 1em 3em;
@@ -22,4 +30,11 @@
     &:hover {
         transform: scale(1.05) translateY(-.3em);
     }
+}
+
+.btn--small {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    padding: 1rem 3rem;
+    border-radius: 3rem;
 }

@@ -29,8 +29,73 @@
     }
 
     &__location {
-        background-color: rgba(deepskyblue, .5);
-        width: 100%; //TEST
-        height: 35rem; //TEST
+        box-sizing: border-box;
+        padding: 1rem;
+        width: 100%;
+        height: 35rem;
+        border-radius: .5rem;
+        box-shadow: 0 0 10rem rgba(0, 0, 0, .1);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__location-image {
+        width: 100%;
+        height: 50%;
+        border-radius: inherit;
+        background-size: cover;
+        background-position: bottom;
+
+        &--poznan {
+            background-image: url(/img/poznan.png);
+        }
+
+        &--warsaw {
+            background-image: url(/img/warsaw.png);
+        }
+
+        &--wroclaw {
+            background-image: url(/img/wroclaw.png);
+            background-position: top;
+        }
+
+        &--karpacz {
+            background-image: url(/img/karpacz.png);
+        }
+
+        &--dolina {
+            background-image: url(/img/dolina.png);
+        }
+
+        &--kozy {
+            background-image: url(/img/kozy.png);
+        }
+    }
+
+    &__location-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        span {
+            line-height: 1.2;
+            color: $color-gray;
+        }
+    }
+
+    &__location-name {
+        font-size: 3rem;
+    }
+
+    &__location-province {
+        font-size: 1.4rem;
+        font-weight: 300;
+    }
+
+    &__location-button {
+        margin-bottom: 2rem;
     }
 }
